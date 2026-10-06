@@ -4,7 +4,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Data.Sqlite;
+using Npgsql;
 
 namespace ConsoleApp1
 {
@@ -12,10 +12,10 @@ namespace ConsoleApp1
     {
         public static void Main()
         {
-            DbProviderFactory factory = SqliteFactory.Instance;
+            DbProviderFactory factory = NpgsqlFactory.Instance;
             DbConnection connection = factory.CreateConnection()!;
 
-            connection.ConnectionString = "Data Source=lesson7.db"; ;
+            connection.ConnectionString = ""; ;
             connection.Open();
 
             string createTableSql =
